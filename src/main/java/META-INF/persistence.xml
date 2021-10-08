@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="fcrh-prova-ds" transaction-type="RESOURCE_LOCAL">
+<!-- 		<provider>org.hibernate.ejb.HibernatePersistence</provider> -->
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<non-jta-data-source>java:/fcrh-prova-ds</non-jta-data-source>
+		<!--ENTIDADES-->
+		<class>br.gov.prodemge.seplag.fcrhprova.entidades.casousopublico.CasoUsoPublicoVO</class>
+		<class>br.gov.prodemge.seplag.fcrhprova.entidades.funcionario.FuncionarioVO</class>
+		<class>br.gov.prodemge.seplag.fcrhprova.entidades.funcionario.FuncionarioAnexoECMVO</class>
+		
+		
+		<properties>
+			<property name="jboss.entity.manager.jndi.name" value="java:/em" />
+			<property name="jboss.entity.manager.factory.jndi.name" value="java:/emf/fcrh-prova" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="false" />
+		</properties>
+		
+	</persistence-unit> 
+</persistence> 
+

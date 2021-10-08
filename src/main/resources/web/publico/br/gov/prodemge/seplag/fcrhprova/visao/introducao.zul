@@ -1,0 +1,51 @@
+<window id="principal" apply="br.gov.prodemge.seplag.fcrhprova.controle.FcrhprovaPublicoWindowIntroducao" sclass="windowIntroducao windowPdg" xmlns:n="native">
+	<div sclass="navbar navbar-expand fixed-top">
+		<a zclass="menuicon ibars">
+			<attribute name="onClick"><![CDATA[Clients.evalJavaScript("abreFechaMenu();");]]></attribute>
+		</a>
+		
+		<div zclass="navigation">
+			<div id="menubar" class="menubar">
+				<navbar id="menubar_principal" orient="vertical" collapsed="false">
+					<nav label="Menu" visible="true" iconSclass="fas fa-cogs">
+						<navitem label="Caso de uso público" visible="true" onClick="classecontrole.abrir(self); classecontrole.abreFechaMenu(menubar)">
+							<custom-attributes urlcasodeuso="~./publico/br/gov/prodemge/seplag/fcrhprova/visao/casousopublico/casousopublico.zul" />
+						</navitem>
+						<navitem label="Funcionário" visible="true" onClick="classecontrole.abrir(self); classecontrole.abreFechaMenu(menubar)">
+							<custom-attributes urlcasodeuso="~./publico/br/gov/prodemge/seplag/fcrhprova/visao/funcionario/funcionario.zul" />
+						</navitem>
+					</nav>
+				</navbar>
+			</div>
+
+			<a class="colapsemenu">
+				<attribute name="onClick">
+					<![CDATA[menubar_principal.setCollapsed(!menubar_principal.isCollapsed());Clients.evalJavaScript("menuColapse();");]]>
+				</attribute>
+			</a>
+		</div>
+
+		<div sclass="navbar-brand">
+			<span class="logo">fcrhprova</span>
+		</div>
+		
+		<div sclass="barra-usuario">
+			<button onClick="classecontrole.signIn()" sclass="btn btn-danger btn-login" label="Login"/>	
+		</div>
+	</div>
+
+	<div zclass="main content" id="meio" />
+	
+	<div zclass="footer">
+		<div zclass="container-fluid">
+			<div zclass="row">
+				<div zclass="col-md-9 footerVersion">
+					<span class="version">V 1.0</span>
+				</div>
+				<div zclass="col-md-3 footerLogo">
+					<image src="/publico/br/gov/prodemge/tema/imagens/logo_prodemge.png" sclass="img-fluid"/>
+				</div>
+			</div>
+		</div>
+	</div>
+</window>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>br.mg.gov.prodemge.prodigio</groupId>
+		<artifactId>prodigio-pom</artifactId>
+		<version>2.0.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>fcrh-prova</artifactId>
+	<packaging>jar</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+
+
+	<name>fcrh-prova-frontend</name>
+	<description>Aplicação web</description>
+
+	<properties>
+		<version.projeto-atual>0.0.001-SNAPSHOT</version.projeto-atual>
+		<version.prodigio>9.0.001-SNAPSHOT</version.prodigio>
+		<version.ssc>4.0.118</version.ssc>
+		<version.vacina>0.1.03</version.vacina>
+	</properties>
+
+	<dependencies>
+
+		<!-- PRODIGIO -->
+		<dependency>
+			<groupId>br.mg.gov.prodemge.prodigio</groupId>
+			<artifactId>prodigio-web-zk</artifactId>
+			<version>${version.prodigio}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>br.mg.gov.prodemge.prodigio</groupId>
+			<artifactId>prodigio-negocio</artifactId>
+			<version>${version.prodigio}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>br.mg.gov.prodemge.prodigio</groupId>
+			<artifactId>prodigio-test</artifactId>
+			<version>${version.prodigio}</version>
+		</dependency>
+
+		<!-- SIGNA -->
+		<!-- <dependency> <groupId>br.mg.gov.prodemge.certificacao</groupId> <artifactId>certificacao-digital-api</artifactId> 
+			</dependency> -->
+
+		<!-- SSC -->
+		<dependency>
+			<groupId>br.gov.prodemge.ssc</groupId>
+			<artifactId>ssc-client-oauth</artifactId>
+			<version>${version.ssc}</version>
+		</dependency>
+
+		<!-- TEMA CSS -->
+		<dependency>
+			<groupId>br.gov.prodemge.tema</groupId>
+			<artifactId>templateDefault-diamond-theme</artifactId>
+			<version>0.0.4-SNAPSHOT</version>
+		</dependency>
+		<!-- METRICAS -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+			<version>${version.springboot}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>ch.qos.logback</groupId>
+					<artifactId>logback-classic</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
+			<version>1.3.6</version>
+		</dependency>
+		<!-- Oracle JDBC driver -->
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+		    <artifactId>ojdbc6</artifactId>
+		    <version>11.2.0.4</version>
+        </dependency>
+        <!-- apache avro -->
+		<dependency>
+			<groupId>org.apache.avro</groupId>
+			<artifactId>avro</artifactId>
+			<version>1.10.0</version>
+		</dependency>
+		<!-- swagger -->
+        <dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.5.9</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-webmvc</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- HikariCP connection pool -->
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+			<version>3.4.5</version>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+		<finalName>${artifactId}</finalName>
+		<defaultGoal>package</defaultGoal>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+				</plugin>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<configuration>
+						<mainClass>br.gov.prodemge.seplag.fcrhprova.FcrhprovaZKApplication</mainClass>
+						<layout>ZIP</layout>
+					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>repackage</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>3.1.0</version>
+					<configuration>
+						<nonFilteredFileExtensions>
+							<nonFilteredFileExtension>pdf</nonFilteredFileExtension>
+							<nonFilteredFileExtension>jasper</nonFilteredFileExtension>
+							<nonFilteredFileExtension>css</nonFilteredFileExtension>
+							<nonFilteredFileExtension>eot</nonFilteredFileExtension>
+							<nonFilteredFileExtension>svg</nonFilteredFileExtension>
+							<nonFilteredFileExtension>woff</nonFilteredFileExtension>
+							<nonFilteredFileExtension>woff2</nonFilteredFileExtension>
+							<nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+							<nonFilteredFileExtension>js</nonFilteredFileExtension>
+							<nonFilteredFileExtension>ico</nonFilteredFileExtension>
+							<nonFilteredFileExtension>wpd</nonFilteredFileExtension>
+						</nonFilteredFileExtensions>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

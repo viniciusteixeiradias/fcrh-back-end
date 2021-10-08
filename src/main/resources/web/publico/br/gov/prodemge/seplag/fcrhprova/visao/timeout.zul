@@ -1,0 +1,45 @@
+<window class="window_pdg tempVertical" xmlns:n="native">
+	<?meta charset="utf-8" ?>
+	<?meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"?>
+	<?meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"?>
+	<?link rel="icon" type="image/x-icon" href="/br/gov/prodemge/tema/imagens/favicon.ico"?>
+	<?link href="/br/gov/prodemge/tema/imagens/favicon.ico" rel="shortcut icon"?>
+	<?meta name='theme-color' content='#3F729B' ?>
+
+	<?link rel='stylesheet' href='/br/gov/prodemge/tema/css/core.css' media='all' ?>
+	<?link rel='stylesheet' href='/br/gov/prodemge/tema/css/custom.css' media='all' ?>
+	
+
+	<div sclass="navbar navbar-expand fixed-top">
+		<div sclass="navbar-brand">
+			<image src="/br/gov/prodemge/tema/imagens/logo_topo.png" sclass="img-fluid" />
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="container-fluid content centerOut">
+			<div sclass="card cardModulo">
+				<div class="card-header">
+					<span zclass="fas fa-clock"></span>																				
+					<label value="Sessão Encerrada" />
+				</div>
+				<div sclass="card-body text-center">
+					<button zclass="btn btn-tema" label="Prosseguir para página inicial">
+						<attribute name="onClick">Executions.sendRedirect("/");	</attribute>								
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-9 footerVersion"></div>
+				<div class="col-md-3 footerLogo">
+					<image src="/br/gov/prodemge/tema/imagens/logo_prodemge.png" sclass="img-fluid" />
+				</div>
+			</div>
+		</div>
+	</div>					
+</window>

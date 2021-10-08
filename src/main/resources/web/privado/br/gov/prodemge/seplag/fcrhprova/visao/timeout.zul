@@ -1,0 +1,3 @@
+<window class="window_pdg" xmlns:n="native">
+	<attribute name="onCreate">Executions.sendRedirect("/");</attribute>		
+</window>
